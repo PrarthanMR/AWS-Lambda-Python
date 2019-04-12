@@ -7,8 +7,8 @@ s3 = boto3.resource('s3')
 # Function to return employee data
 
 def lambda_handler(event, context):
-    bucket = "prarthan-jsonfiles"
-    json_file_name = "emp.json"
+    bucket = "abc" //your s3 bucket name
+    json_file_name = "xyz.kson" //your jsnon name
     content_object = s3.Object(bucket,json_file_name)
     file_content = content_object.get()['Body'].read().decode('utf-8')
     json_content = json.loads(file_content)
